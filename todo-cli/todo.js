@@ -36,9 +36,8 @@ const todoList = () => {
               ? "" // For tasks due today, don't include the date
               : ` ${item.dueDate}`
             : "";
-          return `${index + 1}. [${item.completed ? "x" : " "}] ${
-            item.title
-          }${dueText}`;
+          const completionStatus = item.completed ? "[x]" : "[ ]";
+          return `${index + 1}. ${completionStatus} ${item.title}${dueText}`;
         })
         .join("\n");
   
