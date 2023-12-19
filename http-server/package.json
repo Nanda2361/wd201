@@ -1,15 +1,28 @@
 {
   "name": "http-server",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "",
+=======
+>>>>>>> 8cb806ffddf2bf5a87ca94f75d1e636c490d37bd
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "author": "Nanda",
   "license": "ISC",
   "dependencies": {
     "minimist": "^1.2.8"
   }
+=======
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {},
+  "description": ""
+>>>>>>> 8cb806ffddf2bf5a87ca94f75d1e636c490d37bd
 }

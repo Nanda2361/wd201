@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "json-server": "^0.17.4"
   },
@@ -6,10 +7,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {},
+=======
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+>>>>>>> 8cb806ffddf2bf5a87ca94f75d1e636c490d37bd
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+<<<<<<< HEAD
   "license": "ISC",
   "description": ""
+=======
+  "license": "ISC"
+>>>>>>> 8cb806ffddf2bf5a87ca94f75d1e636c490d37bd
 }

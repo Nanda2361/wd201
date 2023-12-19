@@ -51,4 +51,9 @@ const server = http
   server.listen(port, ()=>{
     console.log(`Server is running at http://localhost:/${port}`);
 
+<<<<<<< HEAD
   });
+=======
+  });
+
+>>>>>>> 8cb806ffddf2bf5a87ca94f75d1e636c490d37bd
