@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const todoList = require("../todo");
 
 describe("TodoList Test Suite", () => {
@@ -154,4 +153,3 @@ describe("TodoList Test Suite", () => {
     expect(dueLaterItems[0].title).toBe("Due Later Todo");
   });
 });
->>>>>>> 8cb806ffddf2bf5a87ca94f75d1e636c490d37bd
