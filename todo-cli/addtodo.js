@@ -1,3 +1,4 @@
+// addTodo.js
 var argv = require("minimist")(process.argv.slice(2));
 const db = require("./models/index");
 
@@ -21,7 +22,7 @@ const getJSDate = (days) => {
   const { title, dueInDays } = argv;
   if (!title || dueInDays === undefined) {
     throw new Error(
-      'title and dueInDays are required. \nSample command: node addTodo.js --title="Buy milk" --dueInDays=-2 ',
+      'title and dueInDays are required. \nSample command: node addTodo.js --title="Buy milk" --dueInDays=-2 '
     );
   }
   await createTodo({ title, dueDate: getJSDate(dueInDays), completed: false });
