@@ -20,11 +20,13 @@ const getJSDate = (days) => {
 };
 (async () => {
   const { title, dueInDays } = argv;
-  if (!title || dueInDays === undefined) {
+  if (!title || dueInDays === undefined  || isNaN(parseInt(dueInDays, 10))) {
     throw new Error(
       'title and dueInDays are required. \nSample command: node addTodo.js --title="Buy milk" --dueInDays=-2 '
     );
   }
-  await createTodo({ title, dueDate: getJSDate(dueInDays), completed: false });
+
+  const dueDate = getJSDate(parseInt(dueInDays, 10));
+  await createTodo({ title, dueDate , completed: false });
   await db.Todo.showList();
 })();
