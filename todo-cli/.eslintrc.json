@@ -1,6 +1,10 @@
 {
     "env": {
+<<<<<<< HEAD
         "extends": "eslint:recommended",
+=======
+        
+>>>>>>> e1cbb680798bc1fae54363e6a6254658ba836924
         "commonjs": true,
         "es2021": true,
         "node": true,
