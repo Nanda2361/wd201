@@ -7,7 +7,8 @@ describe("TodoList Test Suite", () => {
     todo = todoList();
   });
 
-  test("We Should create a new todo", () => {
+  // Test 1: Adding a todo
+  test("Test to add a todo", () => {
     todo.add({
       title: "New Todo",
       completed: false,
@@ -18,7 +19,8 @@ describe("TodoList Test Suite", () => {
     expect(todo.all[0].title).toBe("New Todo");
   });
 
-  test("Should mark a todo as completed after its completion", () => {
+  // Test 2: Marking a todo as complete
+  test("Test to mark a todo as complete", () => {
     todo.add({
       title: "Incomplete Todo",
       completed: false,
@@ -30,22 +32,22 @@ describe("TodoList Test Suite", () => {
     expect(todo.all[0].completed).toBe(true);
   });
 
-  test("Should retrieve overdue items after the time is over", () => {
-    
-
+  // Test 3: Retrieving overdue items
+  test("Test to retrieve overdue items", () => {
     todo.add({
       title: "Overdue Todo",
       completed: false,
       dueDate: "2023-01-01",
     });
 
-    const allOverDueThings = todo.overdue();
+    const overdueItems = todo.overdue();
 
-    expect(allOverDueThings.length).toBe(1);
-    expect(allOverDueThings[0].title).toBe("Overdue Todo");
+    expect(overdueItems.length).toBe(1);
+    expect(overdueItems[0].title).toBe("Overdue Todo");
   });
 
-  test("Should retrieve due today items which are mentioned", () => {
+  // Test 4: Retrieving due today items
+  test("Test to retrieve due today items", () => {
     const todayDate = new Date().toISOString().split("T")[0];
 
     todo.add({
@@ -54,24 +56,23 @@ describe("TodoList Test Suite", () => {
       dueDate: todayDate,
     });
 
-    const todayDueThings = todo.dueToday();
+    const dueTodayItems = todo.dueToday();
 
-    expect(todayDueThings.length).toBe(1);
-    expect(todayDueThings[0].title).toBe("Due Today Todo");
+    expect(dueTodayItems.length).toBe(1);
+    expect(dueTodayItems[0].title).toBe("Due Today Todo");
   });
 
-  test("Should retrieve due later items", () => {
-    
-
+  // Test 5: Retrieving due later items
+  test("Test to retrieve due later items", () => {
     todo.add({
       title: "Due Later Todo",
       completed: false,
       dueDate: "2023-12-31",
     });
 
-    const dueLaterThings = todo.dueLater();
+    const dueLaterItems = todo.dueLater();
 
-    expect(dueLaterThings.length).toBe(1);
-    expect(dueLaterThings[0].title).toBe("Due Later Todo");
+    expect(dueLaterItems.length).toBe(1);
+    expect(dueLaterItems[0].title).toBe("Due Later Todo");
   });
 });
