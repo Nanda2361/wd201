@@ -39,10 +39,10 @@ describe("TodoList Test Suite", () => {
       dueDate: "2023-01-01",
     });
 
-    const ThingsallOverDue = todo.overdue();
+    const allOverDueThings = todo.overdue();
 
-    expect(ThingsallOverDue.length).toBe(1);
-    expect(ThingsallOverDue[0].title).toBe("Overdue Todo");
+    expect(allOverDueThings.length).toBe(1);
+    expect(allOverDueThings[0].title).toBe("Overdue Todo");
   });
 
   test("Should retrieve due today items which are mentioned", () => {
@@ -54,10 +54,10 @@ describe("TodoList Test Suite", () => {
       dueDate: todayDate,
     });
 
-    const ThingstodayDue = todo.dueToday();
+    const todayDueThings = todo.dueToday();
 
-    expect(ThingstodayDue.length).toBe(1);
-    expect(ThingstodayDue[0].title).toBe("Due Today Todo");
+    expect(todayDueThings.length).toBe(1);
+    expect(todayDueThings[0].title).toBe("Due Today Todo");
   });
 
   test("Should retrieve due later items", () => {
@@ -69,9 +69,9 @@ describe("TodoList Test Suite", () => {
       dueDate: "2023-12-31",
     });
 
-    const ThingsdueLater = todo.dueLater();
+    const dueLaterThings = todo.dueLater();
 
-    expect(ThingsdueLater.length).toBe(1);
-    expect(ThingsdueLater[0].title).toBe("Due Later Todo");
+    expect(dueLaterThings.length).toBe(1);
+    expect(dueLaterThings[0].title).toBe("Due Later Todo");
   });
 });
