@@ -7,20 +7,11 @@
     "test": "jest",
     "prepare": "cd.. && husky install todo-cli/.husky"
   },
-<<<<<<< HEAD
   "author": "Nanda-Kishor <nandakishor6772@gmail.com",
-=======
-  "author": "G-Nanda-kishor <nandakishor6772@gmail.com>",
->>>>>>> 8cb806ffddf2bf5a87ca94f75d1e636c490d37bd
->>>>>>> e1cbb680798bc1fae54363e6a6254658ba836924
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.56.0",
     "husky": "^8.0.3",
-<<<<<<< HEAD
-=======
-=======
->>>>>>> e1cbb680798bc1fae54363e6a6254658ba836924
     "jest": "^29.4.3",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1"

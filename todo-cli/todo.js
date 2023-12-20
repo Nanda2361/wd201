@@ -1,5 +1,4 @@
 const todoList = () => {
-<<<<<<< HEAD
     all = []
     const add = (todoItem) => {
       all.push(todoItem)
@@ -14,7 +13,7 @@ const todoList = () => {
   
     const overdue = () => {
         const today = new Date().toISOString().split("T")[0];
-=======
+
   let all = []
   const add = (todoItem) => {
     all.push(todoItem)
@@ -25,7 +24,6 @@ const todoList = () => {
 
   const overdue = () => {
     const today = new Date().toISOString().split("T")[0];
->>>>>>> e1cbb680798bc1fae54363e6a6254658ba836924
     return all.filter((item) => !item.completed && item.dueDate < today);
       // Write the date check condition here and return the array
       // of overdue items accordingly.
@@ -71,9 +69,4 @@ const todoList = () => {
     toDisplayableList
   };
 };
-
-<<<<<<< HEAD
 module.exports = todoList;
-=======
-module.exports = todoList;
->>>>>>> e1cbb680798bc1fae54363e6a6254658ba836924
