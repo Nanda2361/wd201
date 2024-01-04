@@ -55,4 +55,8 @@ const todoList = () => {
   };
 };
 
+<<<<<<< HEAD
 module.exports = todoList;
+=======
+module.exports = todoList;
+>>>>>>> e36cbf34b647147dca9acc807d6b27b8553a1761

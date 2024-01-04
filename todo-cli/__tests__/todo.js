@@ -1,65 +1,78 @@
 const todoList = require("../todo");
 
 describe("TodoList Test Suite", () => {
-  let nandatodo;
+  let todo;
+
   beforeEach(() => {
-    nandatodo = todoList();
+    todo = todoList();
   });
 
-  test("Should create a new todo", () => {
-    nandatodo.add({
+  // Test 1: Adding a todo
+  test("Test to add a todo", () => {
+    todo.add({
       title: "New Todo",
       completed: false,
       dueDate: "2023-12-31",
     });
-    expect(nandatodo.all.length).toBe(1);
-    expect(nandatodo.all[0].title).toBe("New todo");
+
+    expect(todo.all.length).toBe(1);
+    expect(todo.all[0].title).toBe("New Todo");
   });
 
-  test("Should mark a todo as completed", () => {
-    nandatodo.add({
+  // Test 2: Marking a todo as complete
+  test("Test to mark a todo as complete", () => {
+    todo.add({
       title: "Incomplete Todo",
       completed: false,
       dueDate: "2023-12-31",
     });
-    nandatodo.markAsComplete(0);
-    expect(nandatodo.all[0].completed).toBe(true);
+
+    todo.markAsComplete(0);
+
+    expect(todo.all[0].completed).toBe(true);
   });
 
-
-  test("Should retrieve overdue items", () => {
-    const today = new Date().toISOString().split("T")[0];
-    nandatodo.add({
+  // Test 3: Retrieving overdue items
+  test("Test to retrieve overdue items", () => {
+    todo.add({
       title: "Overdue Todo",
       completed: false,
       dueDate: "2023-01-01",
     });
-    const ushaoverdue = nandatodo.overdue();
-    expect(ushaoverdue.length).toBe(1);
-    expect(ushaoverdue[0].title).toBe("Overdue todo");
+
+    const overdueItems = todo.overdue();
+
+    expect(overdueItems.length).toBe(1);
+    expect(overdueItems[0].title).toBe("Overdue Todo");
   });
 
-  test("Should retrieve due today items", () => {
-    const today = new Date().toISOString().split("T")[0];
-    nandatodo.add({
+  // Test 4: Retrieving due today items
+  test("Test to retrieve due today items", () => {
+    const todayDate = new Date().toISOString().split("T")[0];
+
+    todo.add({
       title: "Due Today Todo",
       completed: false,
       dueDate: todayDate,
     });
-    const laddudueToday = nandatodo.dueToday();
-    expect(laddudueToday.length).toBe(1);
-    expect(laddudueToday[0].title).toBe("Due Today Todo");
+
+    const dueTodayItems = todo.dueToday();
+
+    expect(dueTodayItems.length).toBe(1);
+    expect(dueTodayItems[0].title).toBe("Due Today Todo");
   });
 
-  test("Should retrieve due later items", () => {
-    const today = new Date().toISOString().split("T")[0];
-    nandatodo.add({
+  // Test 5: Retrieving due later items
+  test("Test to retrieve due later items", () => {
+    todo.add({
       title: "Due Later Todo",
       completed: false,
       dueDate: "2023-12-31",
     });
-    const kishorduelater = nandatodo.dueLater();
-    expect(kishorduelater.length).toBe(1);
-    expect(kishorduelater[0].title).toBe("Due Later Todo");
+
+    const dueLaterItems = todo.dueLater();
+
+    expect(dueLaterItems.length).toBe(1);
+    expect(dueLaterItems[0].title).toBe("Due Later Todo");
   });
 });
