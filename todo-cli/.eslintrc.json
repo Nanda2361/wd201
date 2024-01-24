@@ -1,16 +1,20 @@
 {
     "env": {
-        "extends": "eslint:recommended",
-        "commonjs": true,
-        "es2021": true,
-        "node": true,
-        "jest": true
+      "browser": true,
+      "commonjs": true,
+      "es2021": true,
+      "node": true 
     },
     "extends": "eslint:recommended",
-    "overrides": [],
     "parserOptions": {
-        "ecmaVersion": "latest"
+      "ecmaVersion": 2022
+    },
+    "globals": {
+      "__filename": "readonly",
+      "__dirname": "readonly",
+      "Sequelize": true
     },
     "rules": {
+      "no-console": "off"
     }
-}
+  }
