@@ -5,7 +5,7 @@ app.use(bodyParser.json());
 
 const { Todo } = require("./models")
 
-app.get("/todos", (request, response) => {
+app.get("/todos", async (request, response) => {
     try {
         const todos = await Todo.findAll();
         return response.json(todos);
@@ -38,7 +38,7 @@ app.put("/todo/:id/markAsCompleted" , async (request, response) => {
     }
 })
 
-app.delete("/todo/:id" , (request, response) => {
+app.delete("/todo/:id" , async (request, response) => {
     const loggedInUser = request.user.id;
     console.log("We have to delete a todo with ID: ", request.params.id);
     try {
